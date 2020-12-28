@@ -56,9 +56,14 @@ const startStream = () => {
 
 let playing = false;
 let button = document.getElementById("play");
-button.addEventListener("click", async () => {
+let buttonText = document.getElementById("play-text");
+let iconPlay = document.getElementById("play-play");
+let iconStop = document.getElementById("play-stop");
+button?.addEventListener("click", async () => {
   if (!playing) {
-    button.textContent = "Stop";
+    buttonText.textContent = "Stop";
+    iconPlay.classList.replace('block', 'hidden');
+    iconStop.classList.replace('hidden', 'block');
     if (audio) {
       audio.play();
     } else {
@@ -69,7 +74,9 @@ button.addEventListener("click", async () => {
     if (audio) {
       audio.pause();
     }
-    button.textContent = "Play";
+    buttonText.textContent = "Play";
+    iconPlay.classList.replace('hidden', 'block');
+    iconStop.classList.replace('block', 'hidden');
     playing = false;
   }
 });
