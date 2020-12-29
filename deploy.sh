@@ -5,7 +5,7 @@ TARGET_DIR="/var/www/coding-music"
 export NODE_ENV=production
 
 echo Deploying...
-webpack --config ./webpack.config.js --mode production &&
+npm run build &&
 gtar czf bundle.tgz -C dist . &&
 scp bundle.tgz $TARGET_HOST:/tmp/ &&
 rm bundle.tgz &&
