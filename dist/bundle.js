@@ -39,7 +39,7 @@ const startStream = () => {
   var source = audioCtx.createMediaElementSource(audio);
   source.connect(audioCtx.destination);
   audio.crossOrigin = "anonymous";
-  audio.src = "http://ice2.somafm.com/defcon-256-mp3";
+  audio.src = "//ice2.somafm.com/defcon-256-mp3";
 
   audio.addEventListener(
     "canplaythrough",
